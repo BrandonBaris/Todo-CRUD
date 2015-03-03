@@ -2,12 +2,14 @@ doctype
 html(lang="en")
 head
   meta(charset="UTF-8")
+  link(rel="stylesheet", href="css/styles.css")
   title TODO LIST
 body
   ul
     each todo in todos
-      li.title!= todo.title
-        p.description!= todo.description
+      li
+        a.title(href="todos/#{todo.id}/edit")!= todo.title
+          p.description!= todo.description
   form(action="/delete" method="DELETE")
     button DELETE
   form(action="/todo/:id/complete" method="PUT")

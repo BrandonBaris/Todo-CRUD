@@ -18,6 +18,7 @@ var todoSchema = new Schema({
 
 var Todo = mongoose.model( 'Todo', todoSchema );
 
+// --- index ---
 app.get('/', function (req, res) {
   Todo.find(function(err,todos){
 
@@ -27,14 +28,24 @@ app.get('/', function (req, res) {
   });
 });
 
+// --- new_todo page---
 app.get('/new_todo', function (req, res) {
   res.render('new_todo');
 });
 
+// --- editing todo ---
 app.get('/todos/:id/edit', function (req, res) {
-  res.render('new_todo');
+  var todoId = req.params.id;
+  var query = Todo.where({ _id : todoId });
+  // console.log(todoId);
+  query.findOne(function( err, todos ){
+    if (err) throw err;
+    console.log(todoId);
+    res.render('new_todo', { title: todos.title, description: todos.description });
+  });
 });
 
+// --- creating a todo via new_todo
 app.post('/todos', function(req, res) {
   var title = req.body.title;
   var description = req.body.description;
@@ -50,18 +61,22 @@ app.post('/todos', function(req, res) {
   });
 });
 
+// --- checking completion of item ---
 app.put('/todos/:id/complete', function(req, res) {
   res.redirect( '/' );
 });
 
+// --- unchecking completion of item ---
 app.put('todos/:id/uncomplete', function(req, res) {
   res.redirect( '/' );
 });
 
+// --- updating todo page via edit ---
 app.put('/todos/:id/edit', function(req, res) {
   res.redirect( '/' );
 });
 
+// --- deletion of todo item ---
 app.delete('/todos/:id', function(req, res) {
   res.render('list');
 });
