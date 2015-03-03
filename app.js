@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( express.static( __dirname + '/public') );
@@ -15,9 +16,9 @@ var todoSchema = new Schema({
   is_done : Boolean,
   created_at : Date
 });
+app.use(methodOverride('_method'));
 
 var Todo = mongoose.model( 'Todo', todoSchema );
-
 // --- index ---
 app.get('/', function (req, res) {
   Todo.find(function(err,todos){
@@ -34,14 +35,14 @@ app.get('/new_todo', function (req, res) {
 });
 
 // --- editing todo ---
-app.get('/todos/:id/edit', function (req, res) {
-  var todoId = req.params.id;
+app.get('/todos/:_id/edit?', function (req, res) {
+  var todoId = req.params._id || "";
   var query = Todo.where({ _id : todoId });
   // console.log(todoId);
-  query.findOne(function( err, todos ){
+  query.findOne(function( err, todo ){
     if (err) throw err;
-    console.log(todoId);
-    res.render('new_todo', { title: todos.title, description: todos.description });
+    // console.log(todos._id);
+    res.render('edit', { todo : todo });
   });
 });
 
@@ -49,10 +50,14 @@ app.get('/todos/:id/edit', function (req, res) {
 app.post('/todos', function(req, res) {
   var title = req.body.title;
   var description = req.body.description;
+  var dateCreate = Date.now();
+  console.log(dateCreate);
 
   var todo = new Todo({
     title : title,
-    description : description
+    description : description,
+    created_at : dateCreate,
+    is_done : false
   });
 
   todo.save( function (err) {
@@ -62,22 +67,30 @@ app.post('/todos', function(req, res) {
 });
 
 // --- checking completion of item ---
-app.put('/todos/:id/complete', function(req, res) {
+app.put('/todos/:_id/complete', function(req, res) {
   res.redirect( '/' );
 });
 
 // --- unchecking completion of item ---
-app.put('todos/:id/uncomplete', function(req, res) {
+app.put('todos/:_id/uncomplete', function(req, res) {
   res.redirect( '/' );
 });
 
 // --- updating todo page via edit ---
-app.put('/todos/:id/edit', function(req, res) {
-  res.redirect( '/' );
+app.put('/todos/:_id?', function(req, res) {
+  var todoId = req.params._id || "";
+  var title = req.body.title;
+  var description = req.body.description;
+  var query = Todo.find({ _id : todoId });
+  query.update({title: title, description: description }, function( err ){
+    if (err) throw err;
+    res.redirect( '/' );
+  });
 });
 
 // --- deletion of todo item ---
-app.delete('/todos/:id', function(req, res) {
+app.delete('/todos/:_id?', function(req, res) {
+  var todoId = req.params._id || "";
   res.render('list');
 });
 

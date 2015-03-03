@@ -8,11 +8,12 @@ body
   ul
     each todo in todos
       li
-        a.title(href="todos/#{todo.id}/edit")!= todo.title
+        a.title(href="todos/#{todo._id}/edit")!= todo.title
           p.description!= todo.description
-  form(action="/delete" method="DELETE")
-    button DELETE
-  form(action="/todo/:id/complete" method="PUT")
-    input(type="checkbox")
-  form(action="/new_todo" method="GET")
-    button NEW ITEM
+          p!= todo.created_at
+        form(action="/todo/:id/complete" method="PUT")
+          input(type="checkbox")
+        form(action="/new_todo" method="GET")
+          button NEW ITEM
+        form(action="todos/#{todo._id}?_method=DELETE" method="POST")
+          button DELETE
