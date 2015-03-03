@@ -2,6 +2,15 @@ doctype
 html(lang="en")
 head
   meta(charset="UTF-8")
-  title Document
+  title TODO LIST
 body
-  
+  ul
+    each todo in todos
+      li.title!= todo.title
+        p.description!= todo.description
+  form(action="/delete" method="DELETE")
+    button DELETE
+  form(action="/todo/:id/complete" method="PUT")
+    input(type="checkbox")
+  form(action="/new_todo" method="GET")
+    button NEW ITEM

@@ -2,6 +2,17 @@ doctype
 html(lang="en")
 head
   meta(charset="UTF-8")
-  title Document
+  title A NEW TODOODOO
 body
-  
+  form(action="/todos" method="POST")
+    fieldset
+      div
+        label(for="title") TODO ITEM
+        br
+        input#title(type="text", name="title", placeholder="SOME TODO ITEM")
+      div
+        label(for="description") DESCRIPTION
+        br
+        textarea#description(rows="9", cols="40", name="description", placeholder="SOME DESCRIPTION")
+      div
+        button SAVE
