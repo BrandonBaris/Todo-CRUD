@@ -11,7 +11,7 @@ body
         a.title(href="todos/#{todo._id}/edit")!= todo.title
           p.description!= todo.description
           p!= todo.created_at
-        form(action="/todo/:id/complete" method="PUT")
+        form(action="/todo/#{todo._id}?_method=PUT" method="POST")
           input(type="checkbox")
         form(action="/new_todo" method="GET")
           button NEW ITEM

@@ -91,7 +91,11 @@ app.put('/todos/:_id?', function(req, res) {
 // --- deletion of todo item ---
 app.delete('/todos/:_id?', function(req, res) {
   var todoId = req.params._id || "";
-  res.render('list');
+  var query = Todo.find({ _id : todoId });
+  query.remove(function( err ){
+    if (err) throw err;
+    res.redirect( '/' );
+  });
 });
 
 var server = app.listen(3000, function () {
