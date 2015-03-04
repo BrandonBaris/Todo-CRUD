@@ -11,9 +11,15 @@ body
         a.title(href="todos/#{todo._id}/edit")!= todo.title
           p.description!= todo.description
           p!= todo.created_at
-        form(action="/todo/#{todo._id}?_method=PUT" method="POST")
-          input(type="checkbox")
-        form(action="/new_todo" method="GET")
-          button NEW ITEM
+          if todo.is_done == true  
+            input#check_stat(type="checkbox", value="#{todo._id}", checked)
+          else
+            input#check_stat(type="checkbox", value="#{todo._id}")
         form(action="todos/#{todo._id}?_method=DELETE" method="POST")
           button DELETE
+  form(action="/new_todo" method="GET")
+    button NEW ITEM
+  h2 #{checked}
+  h2 totalItem
+  script(src="http://code.jquery.com/jquery-2.1.1.min.js")
+  script(src="./js/todo.js")
