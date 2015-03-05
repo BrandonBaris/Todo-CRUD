@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var moment = require('moment');
+// moment().format();
 // app.use(require('connect-livereload')({port: 4002}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( express.static( __dirname + '/public') );
@@ -14,7 +16,7 @@ var todoSchema = new Schema({
   title : { type : String, required : true },
   description : String,
   is_done : { type : Boolean, default : false },
-  created_at : { type : Date, default: Date.now }
+  created_at : { type : Date, default: Date.now() }
 });
 app.use(methodOverride('_method'));
 

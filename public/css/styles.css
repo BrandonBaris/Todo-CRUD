@@ -53,16 +53,107 @@ p {
   letter-spacing: 0.2px; }
 
 h1 {
-  font-size: 1.6rem; }
+  font-style: 700;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  color: #999;
+  letter-spacing: 0.2px;
+  padding: 0 0 0.5rem 1rem; }
 
 h2 {
   font-size: 1.5rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding: 1rem 0; }
 
 h3 {
   font-size: 0.5rem; }
 
-@media only screen and (min-width:329px) and (max-width:768px) {
+.diff_num {
+  font-style: 700;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;
+  color: #D2350C;
+  letter-spacing: 0.2px;
+  border: thin solid #fff;
+  padding: 0.1rem 0.3rem;
+  background-color: #fff;
+  opacity: 0.5;
+  border-radius: 12rem; }
+
+.checked_num {
+  font-style: 700;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;
+  color: #7C7056;
+  letter-spacing: 0.2px;
+  border: thin solid #fff;
+  padding: 0.1rem 0.3rem;
+  background-color: #fff;
+  opacity: 0.5;
+  border-radius: 12rem; }
+
+label {
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  color: #7F3B00;
+  letter-spacing: 0.2px;
+  display: inline-block;
+  padding: 1rem; }
+
+input {
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  color: #7F3B00;
+  letter-spacing: 0.2px;
+  padding: 1rem;
+  background-color: #EDB258;
+  border: none;
+  border-radius: 1rem; }
+
+textarea {
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  color: #7F3B00;
+  letter-spacing: 0.2px;
+  padding: 1rem;
+  background-color: #EDB258;
+  border: none;
+  border-radius: 1rem; }
+
+#save_button {
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #EDB258;
+  letter-spacing: 0.2px;
+  background-color: #7C7056;
+  margin: 0.5rem 0;
+  padding: 0.3rem 1.6rem;
+  border: thick solid #7C7056;
+  border-radius: 20rem; }
+  #save_button:hover {
+    border: thick solid #999;
+    padding: 0.3rem 5rem; }
+
+*::-webkit-input-placeholder {
+  color: #7C7056; }
+
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: #7C7056; }
+
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: #7C7056; }
+
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #7C7056; }
+
+@media only screen and (min-width:501px) and (max-width:768px) {
   ul {
     -moz-column-count: 2;
     -moz-column-gap: 0;
@@ -86,6 +177,17 @@ h3 {
     column-fill: balance; } }
 @media only screen and (min-width:1025px) {
   ul {
+    -moz-column-count: 4;
+    -moz-column-gap: 0;
+    -moz-column-fill: balance;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0;
+    -webkit-column-fill: balance;
+    column-count: 4;
+    column-gap: 0;
+    column-fill: balance; } }
+@media only screen and (min-width:1601px) {
+  ul {
     -moz-column-count: 5;
     -moz-column-gap: 0;
     -moz-column-fill: balance;
@@ -97,83 +199,123 @@ h3 {
     column-fill: balance; } }
 ul li {
   display: inline-block;
-  min-height: 100px;
-  padding: 1rem 2rem 2rem;
+  min-width: 100px;
+  min-height: 70px;
+  padding: 1rem 1rem 1rem;
   background-color: #EDB258;
   margin: 0.5rem;
   border-radius: 1rem; }
   ul li div.middle {
     overflow: hidden;
-    width: 200px; }
+    max-width: 250px; }
   ul li div.lower {
     padding: 0.5rem 0; }
   ul li:hover {
     background-color: #DDD; }
+  @media only screen and (max-width:500px) {
+    ul li {
+      min-width: 100px;
+      min-height: 40px;
+      width: 240px; } }
+  @media only screen and (min-width:501px) and (max-width:768px) {
+    ul li {
+      min-width: 50px;
+      width: 180px; } }
+  @media only screen and (min-width:769px) and (max-width:1024px) {
+    ul li {
+      min-width: 80px;
+      width: 180px; } }
+  @media only screen and (min-width:1025px) {
+    ul li {
+      min-width: 80px;
+      width: 200px; } }
+  @media only screen and (min-width:1601px) {
+    ul li {
+      min-width: 80px;
+      width: 220px; } }
 
-@media only screen and (max-width:328px) {
+@media only screen and (max-width:500px) {
   div.everything {
-    max-width: 328px;
-    background-color: #fff; } }
-@media only screen and (min-width:329px) and (max-width:768px) {
+    max-width: 500px; } }
+@media only screen and (min-width:501px) and (max-width:768px) {
   div.everything {
-    max-width: 768px;
-    background-color: #637; } }
+    max-width: 700px; } }
 @media only screen and (min-width:769px) and (max-width:1024px) {
   div.everything {
-    max-width: 1024px;
-    background-color: #125; } }
+    max-width: 1000px; } }
+@media only screen and (min-width:1025px) and (max-width:1600px) {
+  div.everything {
+    max-width: 1600px; } }
+@media only screen and (min-width:1601px) {
+  div.everything {
+    min-width: 1601px; } }
 
 header {
   position: fixed;
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
   z-index: 1;
   padding: 1rem;
   background-color: #7C7056; }
-  @media only screen and (max-width:328px) {
+  @media only screen and (max-width:500px) {
     header {
-      max-width: 328px; } }
-  @media only screen and (min-width:329px) and (max-width:768px) {
+      max-width: 500px; } }
+  @media only screen and (min-width:501px) and (max-width:768px) {
     header {
-      max-width: 768px; } }
+      max-width: 700px; } }
   @media only screen and (min-width:769px) and (max-width:1024px) {
     header {
-      max-width: 1024px; } }
+      max-width: 1000px; } }
+  @media only screen and (min-width:1025px) and (max-width:1600px) {
+    header {
+      max-width: 1600px; } }
+  @media only screen and (min-width:1601px) {
+    header {
+      min-width: 1601px; } }
+  header:hover {
+    background-color: #DDD; }
 
 div.headspace {
   height: 80px; }
-  @media only screen and (max-width:328px) {
+  @media only screen and (max-width:500px) {
     div.headspace {
-      max-width: 328px; } }
-  @media only screen and (min-width:329px) and (max-width:768px) {
+      max-width: 500px; } }
+  @media only screen and (min-width:501px) and (max-width:768px) {
     div.headspace {
-      max-width: 768px; } }
+      max-width: 700px; } }
   @media only screen and (min-width:769px) and (max-width:1024px) {
     div.headspace {
-      max-width: 1024px; } }
+      max-width: 1000px; } }
 
 .content {
   vertical-align: middle;
   text-align: center;
   margin: 0 5% 0; }
-  @media only screen and (max-width:328px) {
+  @media only screen and (max-width:500px) {
     .content {
-      max-width: 328px; } }
-  @media only screen and (min-width:329px) and (max-width:768px) {
+      max-width: 500px; } }
+  @media only screen and (min-width:501px) and (max-width:768px) {
     .content {
-      max-width: 768px; } }
+      max-width: 700px; } }
   @media only screen and (min-width:769px) and (max-width:1024px) {
     .content {
-      max-width: 1024px; } }
+      max-width: 1000px; } }
+
+label.checker_label {
+  float: left;
+  opacity: 0.5;
+  display: none; }
 
 #check_stat {
-  float: left;
-  opacity: 0.5; }
+  float: left; }
 
 #delete_form {
   float: right; }
 
 #new_item_form {
+  width: 100%;
+  position: fixed;
+  left: 0;
   display: inline-block; }
   #new_item_form button#new_item_button {
     font-style: 400;
@@ -181,14 +323,14 @@ div.headspace {
     font-size: 20px;
     color: #EDB258;
     letter-spacing: 0.2px;
+    min-width: 270px;
+    width: 100%;
     background-color: #7C7056;
-    margin: 0.5rem 0;
-    padding: 0.3rem 1.6rem;
-    border: thick solid #7C7056;
-    border-radius: 20rem; }
+    padding: 0 1.6rem;
+    border: thick solid #7C7056; }
     #new_item_form button#new_item_button:hover {
-      border: thick solid #999;
-      padding: 0.3rem 5rem; }
+      border: thick solid #7F3B00;
+      background-color: #999; }
 
 #delete_button {
   vertical-align: middle;
@@ -200,7 +342,15 @@ div.headspace {
   border: thin solid #7C7056;
   border-radius: 1rem; }
   #delete_button:hover {
-    opacity: 0.9; }
+    opacity: 1; }
+
+footer {
+  width: 100%;
+  text-align: center;
+  height: 1rem;
+  position: fixed;
+  bottom: 0;
+  background-color: #333; }
 
 .shadow {
   box-shadow: 1px 1px 0.7rem 1px #333; }

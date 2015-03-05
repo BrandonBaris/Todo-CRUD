@@ -24,7 +24,7 @@ function countChecks() {
   // console.log('checked',checked);
   // console.log('totalItem',totalItem);
   // console.log('checkDifference',checkDifference);
-  var buildCounter = document.getElementById('counter').innerHTML = " COMPLETE " + checked + " INCOMPLETE: " + checkDifference;
+  var buildCounter = document.getElementById('counter').innerHTML = "<span class='checked_num'>" + checked + "</span>COMPLETE <span class='diff_num'>" + checkDifference + "</span>INCOMPLETE ";
   return buildCounter;
 }
 
