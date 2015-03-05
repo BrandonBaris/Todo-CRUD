@@ -48,21 +48,19 @@ app.get('/todos/:_id/edit', function (req, res) {
 
 // --- creating a todo via new_todo
 app.post('/todos', function(req, res) {
-  var title = req.body.title;
-  var description = req.body.description;
-  var dateCreate = Date.now();
-  console.log(dateCreate);
+  // var title = req.body.title;
+  // var description = req.body.description;
+  // var dateCreate = Date.now();
+  // console.log(dateCreate);
 
   var todo = new Todo({
-    title : title,
-    description : description,
-    created_at : dateCreate,
-    is_done : false
+    title : req.body.title || "",
+    description : req.body.description || ""
   });
 
-  todo.save( function (err) {
-    if (err) throw err;
-    res.redirect( '/' );
+  todo.save( function ( err, todo ) {
+    // if (err) throw err;
+    res.redirect( "/" );
   });
 });
 

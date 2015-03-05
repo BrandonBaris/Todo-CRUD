@@ -62,46 +62,109 @@ h2 {
 h3 {
   font-size: 0.5rem; }
 
+@media only screen and (min-width:329px) and (max-width:768px) {
+  ul {
+    -moz-column-count: 2;
+    -moz-column-gap: 0;
+    -moz-column-fill: balance;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 0;
+    -webkit-column-fill: balance;
+    column-count: 2;
+    column-gap: 0;
+    column-fill: balance; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  ul {
+    -moz-column-count: 3;
+    -moz-column-gap: 0;
+    -moz-column-fill: balance;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 0;
+    -webkit-column-fill: balance;
+    column-count: 3;
+    column-gap: 0;
+    column-fill: balance; } }
+@media only screen and (min-width:1025px) {
+  ul {
+    -moz-column-count: 5;
+    -moz-column-gap: 0;
+    -moz-column-fill: balance;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 0;
+    -webkit-column-fill: balance;
+    column-count: 5;
+    column-gap: 0;
+    column-fill: balance; } }
 ul li {
+  display: inline-block;
   min-height: 100px;
   padding: 1rem 2rem 2rem;
   background-color: #EDB258;
-  float: left;
   margin: 0.5rem;
   border-radius: 1rem; }
   ul li div.middle {
     overflow: hidden;
-    width: 200px;
-    box-sizing: border-box; }
+    width: 200px; }
   ul li div.lower {
     padding: 0.5rem 0; }
+  ul li:hover {
+    background-color: #DDD; }
 
-fieldset {
-  margin: auto;
-  width: 50%; }
-
-@media only screen and (max-width:640px) {
-  .everything {
-    max-width: 400px; } }
+@media only screen and (max-width:328px) {
+  div.everything {
+    max-width: 328px;
+    background-color: #fff; } }
+@media only screen and (min-width:329px) and (max-width:768px) {
+  div.everything {
+    max-width: 768px;
+    background-color: #637; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  div.everything {
+    max-width: 1024px;
+    background-color: #125; } }
 
 header {
   position: fixed;
   width: 100%;
   height: 2rem;
+  z-index: 1;
   padding: 1rem;
-  background-color: #7C7056;
-  float: left; }
+  background-color: #7C7056; }
+  @media only screen and (max-width:328px) {
+    header {
+      max-width: 328px; } }
+  @media only screen and (min-width:329px) and (max-width:768px) {
+    header {
+      max-width: 768px; } }
+  @media only screen and (min-width:769px) and (max-width:1024px) {
+    header {
+      max-width: 1024px; } }
 
 div.headspace {
-  height: 100px; }
+  height: 80px; }
+  @media only screen and (max-width:328px) {
+    div.headspace {
+      max-width: 328px; } }
+  @media only screen and (min-width:329px) and (max-width:768px) {
+    div.headspace {
+      max-width: 768px; } }
+  @media only screen and (min-width:769px) and (max-width:1024px) {
+    div.headspace {
+      max-width: 1024px; } }
 
 .content {
   vertical-align: middle;
   text-align: center;
-  margin: 0 5% 5%; }
-  @media only screen and (max-width:640px) {
+  margin: 0 5% 0; }
+  @media only screen and (max-width:328px) {
     .content {
-      max-width: 400px; } }
+      max-width: 328px; } }
+  @media only screen and (min-width:329px) and (max-width:768px) {
+    .content {
+      max-width: 768px; } }
+  @media only screen and (min-width:769px) and (max-width:1024px) {
+    .content {
+      max-width: 1024px; } }
 
 #check_stat {
   float: left;
@@ -110,8 +173,22 @@ div.headspace {
 #delete_form {
   float: right; }
 
-#new_item {
+#new_item_form {
   display: inline-block; }
+  #new_item_form button#new_item_button {
+    font-style: 400;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #EDB258;
+    letter-spacing: 0.2px;
+    background-color: #7C7056;
+    margin: 0.5rem 0;
+    padding: 0.3rem 1.6rem;
+    border: thick solid #7C7056;
+    border-radius: 20rem; }
+    #new_item_form button#new_item_button:hover {
+      border: thick solid #999;
+      padding: 0.3rem 5rem; }
 
 #delete_button {
   vertical-align: middle;
@@ -119,23 +196,11 @@ div.headspace {
   width: 20px;
   height: 20px;
   background-color: #D2350C;
-  opacity: 0.7;
-  font-style: 400;
-  font-family: 'Lato', sans-serif;
-  font-size: 10px;
-  color: #7F3B00;
-  letter-spacing: 0.2px;
+  opacity: 0.5;
   border: thin solid #7C7056;
-  border-radius: 20rem; }
-
-footer {
-  text-align: center;
-  border-radius: 1rem;
-  margin: auto;
-  background-color: #333; }
-  @media only screen and (max-width:640px) {
-    footer {
-      max-width: 400px; } }
+  border-radius: 1rem; }
+  #delete_button:hover {
+    opacity: 0.9; }
 
 .shadow {
   box-shadow: 1px 1px 0.7rem 1px #333; }

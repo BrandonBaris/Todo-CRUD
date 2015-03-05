@@ -5,19 +5,23 @@ head
   link(rel="stylesheet", href="/css/styles.css")
   title A NEW TODOODOO
 body
-  header
-  block content
-    div.content
-      form(action="/todos" method="POST")
-        fieldset
-          div
-            label(for="title") TODO ITEM
-            br
-            input#title(type="text" name="title" placeholder="NEW ITEM")
-          div
-            label(for="description") DESCRIPTION
-            br
-            textarea#description(rows="9" cols="40" name="description" placeholder="NEW ITEM DESCRIPTION")
-          div
-            button SAVE
-  footer
+  div.everything
+    header
+      h1 TODO LIST
+    div.headspace
+    block content
+      div.content
+        div.form_edit
+          form(action="/todos" method="POST")
+            fieldset
+              div
+                label(for="title") TODO ITEM
+                br
+                input#title(type="text" name="title" placeholder="NEW ITEM")
+              div
+                label(for="description") DESCRIPTION
+                br
+                textarea#description(rows="9" cols="40" name="description" placeholder="NEW ITEM DESCRIPTION")
+              div
+                button CREATE
+    footer

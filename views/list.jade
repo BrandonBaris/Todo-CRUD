@@ -11,25 +11,25 @@ body
     div.headspace
     div.content
       h2#counter COUNTER
-      form#new_item(action="/new_todo" method="GET")
-        button NEW ITEM
+      form#new_item_form(action="/new_todo" method="GET")
+        button#new_item_button NEW ITEM
       ul
         each todo in todos
           a.title(href="todos/#{todo._id}/edit")
-            li#todo_item.clearfix
-              div.upper
-                if todo.is_done == true  
-                  input#check_stat(type="checkbox", value="#{todo._id}", checked)
-                else
-                  input#check_stat(type="checkbox", value="#{todo._id}")
-                form#delete_form(action="todos/#{todo._id}?_method=DELETE" method="POST")
-                  button#delete_button X
-              div.middle
-                h2!= todo.title
-                p.description!= todo.description
-              div.lower
-                h3.date_created!= todo.created_at
-                
+            li#todo_item
+              div
+                div.upper
+                  if todo.is_done == true  
+                    input#check_stat(type="checkbox", value="#{todo._id}", checked)
+                  else
+                    input#check_stat(type="checkbox", value="#{todo._id}")
+                  form#delete_form(action="todos/#{todo._id}?_method=DELETE" method="POST")
+                    button#delete_button &times
+                div.middle
+                  h2!= todo.title
+                  p.description!= todo.description
+                div.lower
+                  h3.date_created!= todo.created_at        
     footer
   script(src="http://code.jquery.com/jquery-2.1.1.min.js")
   script(src="./js/todo.js")

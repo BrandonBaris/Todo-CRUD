@@ -1,13 +1,17 @@
 $(function(){
-
-$("h2").mouseenter(function(){
-  $(this).next("p").slideDown(200);
+var mouse_out = true;
+$("li#todo_item").mouseenter(function(){
+  mouse_out = false;
+  $(this).find("p").slideDown(200);
+  // console.log(mouse_out);
 });
 $("li#todo_item").mouseleave(function(){
-  return setTimeout(function(){
-    $("p").slideUp(200);
-  }, 2000);
-
+  mouse_out = true;
+    setTimeout(function(){
+      if (mouse_out === true){
+        $("p").slideUp(200);
+      }
+    }, 2000);
 });
 
 function countChecks() {
@@ -43,7 +47,7 @@ $("input#check_stat").on("change", function (){
 
 $( window ).load(function() {
   countChecks();
-  $("p").slideToggle(2000);
+  $("p").slideToggle(200);
 });
 
 }); //end closurex
