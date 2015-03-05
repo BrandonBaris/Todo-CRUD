@@ -1,15 +1,131 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700.css);
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
 
 body {
-  background: salmon;
-  font-family: 'COMIC SANS MS', sans-serif;
-}
+  line-height: 1; }
 
-button {
-  display: inline-block;
-}
+ol, ul {
+  list-style: none; }
 
-input {
-  display: inline-block;
-}
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #7F3B00;
+  letter-spacing: 0.2px;
+  background-color: #E1CA94; }
+
+a {
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #7F3B00;
+  letter-spacing: 0.2px;
+  text-decoration: none; }
+  a:hover {
+    color: #D2350C; }
+
+p {
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #7C7056;
+  letter-spacing: 0.2px; }
+
+h1 {
+  font-size: 2rem; }
+
+h2 {
+  font-size: 1.5rem; }
+
+h3 {
+  font-size: 0.7rem; }
+
+.date_created {
+  font-size: 0.4rem; }
+  .date_created:hover {
+    color: #D2350C;
+    font-size: 0.8rem; }
+
+ul li {
+  padding: 1rem 2rem 3rem;
+  background-color: #EDB258;
+  float: left;
+  margin: 0.5rem;
+  border-radius: 1rem; }
+  ul li div.middle {
+    overflow: hidden;
+    width: 200px;
+    box-sizing: border-box; }
+  ul li div.lower {
+    padding: 0.5rem; }
+
+fieldset {
+  margin: auto;
+  width: 50%; }
+
+@media only screen and (max-width:640px) {
+  .everything {
+    max-width: 400px; } }
+
+header {
+  position: fixed;
+  width: 200px;
+  height: 2rem;
+  padding: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #7C7056;
+  float: left; }
+
+div.headspace {
+  height: 100px; }
+
+.content {
+  margin: auto; }
+  @media only screen and (max-width:640px) {
+    .content {
+      max-width: 400px; } }
+
+#check_stat {
+  float: left; }
+
+#delete {
+  float: right; }
+
+footer {
+  text-align: center;
+  border-radius: 1rem;
+  margin: auto;
+  background-color: #333; }
+  @media only screen and (max-width:640px) {
+    footer {
+      max-width: 400px; } }
+
+.shadow {
+  box-shadow: 1px 1px 0.7rem 1px #333; }
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0; }

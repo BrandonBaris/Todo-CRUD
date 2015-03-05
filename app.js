@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
+// app.use(require('connect-livereload')({port: 4002}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( express.static( __dirname + '/public') );
 app.set( 'view engine', 'jade' );
@@ -39,9 +39,9 @@ app.get('/todos/:_id/edit', function (req, res) {
   var todoId = req.params._id;
   var query = Todo.where({ _id : todoId });
   // console.log(todoId);
+
   query.findOne(function( err, todo ){
     if (err) throw err;
-    // console.log(todos._id);
     res.render('edit', { todo : todo });
   });
 });

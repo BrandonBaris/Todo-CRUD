@@ -5,20 +5,31 @@ head
   link(rel="stylesheet", href="css/styles.css")
   title TODO LIST
 body
-  ul
-    each todo in todos
-      li
-        a.title(href="todos/#{todo._id}/edit")!= todo.title
-          p.description!= todo.description
-          p!= todo.created_at
-          if todo.is_done == true  
-            input#check_stat(type="checkbox", value="#{todo._id}", checked)
-          else
-            input#check_stat(type="checkbox", value="#{todo._id}")
-        form(action="todos/#{todo._id}?_method=DELETE" method="POST")
-          button DELETE
-  form(action="/new_todo" method="GET")
-    button NEW ITEM
-  h2#counter
+  div.everything
+    header
+      h1 TODO LIST
+    div.headspace
+    div.content
+      h2#counter COUNTER
+      form(action="/new_todo" method="GET")
+        button NEW ITEM
+      ul
+        each todo in todos
+          a.title(href="todos/#{todo._id}/edit")
+            li#todo_item
+              div.upper
+                if todo.is_done == true  
+                  input#check_stat(type="checkbox", value="#{todo._id}", checked)
+                else
+                  input#check_stat(type="checkbox", value="#{todo._id}")
+                form#delete(action="todos/#{todo._id}?_method=DELETE" method="POST")
+                  button DELETE
+              div.middle
+                h2!= todo.title
+                p.description!= todo.description
+              div.lower
+                h3.date_created!= todo.created_at
+                
+    footer
   script(src="http://code.jquery.com/jquery-2.1.1.min.js")
   script(src="./js/todo.js")

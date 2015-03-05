@@ -1,0 +1,154 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+@import "http://fonts.googleapis.com/css?family=Lato:300,400,700.css";
+
+$brown: #7F3B00;
+$red: #D2350C;
+$gray: #7C7056;
+$yellow: #EDB258;
+$cream: #E1CA94;
+$small-only: "only screen and (max-width:640px)";
+$medium-down: "only screen and (max-width:960px)";
+$medium-only: "only screen and (min-width:641) and (max-width:960px)";
+$medium-up: "only screen and (min-width:641)";
+$large-up: "only screen and (min-width:961px)";
+
+@mixin master_font ($mfont_size:16px,$mfont_color:$brown,$mfont_style:400,$mfont_family:'Lato'){
+  font-style: $mfont_style;
+  font-family: $mfont_family, sans-serif;
+  font-size: $mfont_size;
+  color: $mfont_color;
+  letter-spacing: 0.2px;
+}
+body {
+  @include master_font();
+  background-color: $cream;
+}
+//--- GENERAL
+a {
+  @include master_font($mfont_color:$brown);
+  text-decoration: none;
+  &:hover {
+    color: $red;
+  }
+}
+
+p {
+  @include master_font(0.9rem, $gray);
+}
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  // text-align: center;
+}
+
+h3 {
+  font-size: 0.7rem;
+
+}
+
+  .date_created {
+    // color: $yellow;
+    font-size: 0.4rem;
+    &:hover {
+      color: $red;
+      font-size: 0.8rem;
+    }
+  }
+//--- LAYOUT
+ul{
+  // width: 500px;
+  li {
+    // width: 200px;
+    // height: 200px;
+    padding: 1rem 2rem 3rem;
+    background-color: $yellow;
+    float: left;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    div.middle {
+      overflow : hidden;
+      width: 200px;
+      // height: 200px;
+      box-sizing: border-box;
+    }
+    div.lower {
+      padding: 0.5rem;
+    }
+  }
+}
+
+fieldset {
+  margin: auto;
+  width: 50%;
+}
+
+.everything {
+  @media #{$small-only}{
+    max-width: 400px;
+  }
+}
+
+header {
+  position: fixed;
+  width: 200px;
+  height: 2rem;
+  // margin: auto;
+  padding: 1rem;
+  // border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: $gray;
+  float: left;
+  @media #{$small-only}{
+    // max-width: 400px;
+  }
+}
+
+div.headspace {
+  height: 100px;
+}
+
+.content {
+  // width: 100%;
+  margin: auto;
+  // padding: 1rem;
+  // border-radius: 1rem;
+  // background-color: $yellow;
+  @media #{$small-only}{
+    max-width: 400px;
+  }
+}
+
+#check_stat {
+  float: left;
+}
+
+#delete {
+  float: right;
+}
+footer {
+  // width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+  margin: auto;
+  // height: 4rem;
+  // padding: 1rem;
+  background-color: #333;
+  @media #{$small-only}{
+    max-width: 400px;
+  }
+}
+
+.shadow {
+  box-shadow: 1px 1px 0.7rem 1px #333;
+}
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+}

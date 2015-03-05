@@ -7,10 +7,10 @@ function countChecks() {
   checked = $("input#check_stat:checked").length;
   totalItem = $("input").length;
   checkDifference = totalItem - checked;
-  console.log('checked',checked);
-  console.log('totalItem',totalItem);
-  console.log('checkDifference',checkDifference);
-  var buildCounter = document.getElementById('counter').innerHTML = " CHECKED " + checked + " INCOMPLETE: " + checkDifference;
+  // console.log('checked',checked);
+  // console.log('totalItem',totalItem);
+  // console.log('checkDifference',checkDifference);
+  var buildCounter = document.getElementById('counter').innerHTML = " COMPLETE " + checked + " INCOMPLETE: " + checkDifference;
   return buildCounter;
 }
 
@@ -29,6 +29,12 @@ $("input#check_stat").on("change", function (){
       type : 'PUT'
     });
   }
+});
+$('#todo_item').hover(function(){
+  $(this).slideToggle(200);
+});
+$('#todo_item').mouseleave(function(){
+  $(this).slideToggle(200);
 });
 
 $( window ).load(function() {
