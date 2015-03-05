@@ -70,7 +70,6 @@ h3 {
 }
 
 .diff_num {
-  // display: inline-block;
   @include master_font(1.8rem,$red,700);
   border: thin solid #fff;
   padding: 0.1rem 0.3rem;
@@ -143,39 +142,30 @@ textarea {
 //--- LAYOUT
 ul{
   @media #{$small-only}{
-    // max-width: 328px;
   }
   @media #{$medium-only}{
-    // max-width: 768px;
     @include column_setter(2);
   } 
   @media #{$large-only}{
-    // max-width: 1024px;
     @include column_setter(3);
   }
   @media #{$x-large-up}{
-    // max-width: 1024px;
     @include column_setter(4);
   }
   @media #{$xx-large-up}{
-    // max-width: 1600px;
     @include column_setter(5);
   }
   li {
-    // width: 200px;
     display: inline-block;
     min-width: 100px;
     min-height: 70px;
     padding: 1rem 1rem 1rem;
     background-color: $yellow;
-    // float: left;
     margin: 0.5rem;
     border-radius: 1rem;
     div.middle {
       overflow: hidden;
       max-width: 250px;
-      // height: 200px;
-      // box-sizing: border-box;
     }
     div.lower {
       padding: 0.5rem 0;
@@ -190,40 +180,32 @@ ul{
     }
     @media #{$medium-only}{
       min-width: 50px;
-      // min-height: 50px;
       width: 180px
     } 
     @media #{$large-only}{
       min-width: 80px;
-      // min-height: 80px;
       width: 180px
     }
     @media #{$x-large-up}{
       min-width: 80px;
-      // min-height: 80px;
       width: 200px
     }
     @media #{$xx-large-up}{
       min-width: 80px;
-      // min-height: 80px;
       width: 220px
     }
   }
 }
 
 div.everything {
-  // width: 100%;
   @media #{$small-only}{
     max-width: 500px;
-    // background-color: #fff;
   }
   @media #{$medium-only}{
     max-width: 700px;
-    // background-color: #637;
   } 
   @media #{$large-only}{
     max-width: 1000px;
-    // background-color: #125;
   }
   @media #{$x-large-only}{
     max-width: 1600px;
@@ -276,11 +258,7 @@ div.headspace {
 .content {
   vertical-align: middle;
   text-align: center;
-  // width: 100%;
   margin: 0 5% 0;
-  // padding: 0 5%;
-  // border-radius: 1rem;
-  // background-color: $yellow;
   @media #{$small-only}{
     max-width: 500px;
   }
@@ -292,11 +270,6 @@ div.headspace {
   }
 }
 
-// #check_stat {
-//   float: left;
-//   opacity: 0.5;
-// }
-
 label.checker_label {
   float: left;
   opacity: 0.5;
@@ -305,7 +278,6 @@ label.checker_label {
 
 #check_stat {
   float: left;
-  // display: none;
 }
 
 #delete_form {
@@ -317,21 +289,17 @@ label.checker_label {
   width: 100%;
   position: fixed;
   left: 0;
-  // background-color: #fff;
   display: inline-block;
   button#new_item_button {
     @include master_font(20px, $yellow);
     min-width: 270px;
     width: 100%;
     background-color: $gray;
-    // margin: 0.5rem 0;
     padding: 0 1.6rem;
     border: thick solid $gray;
-    // border-radius: 20rem;
     &:hover {
       border: thick solid $brown;
       background-color: #999;
-      // padding: 0.3rem 5rem;
     }
   }
 }
@@ -353,22 +321,10 @@ label.checker_label {
 footer {
   width: 100%;
   text-align: center;
-  // border-radius: 1rem;
-  // margin: auto;
   height: 1rem;
-  // padding: 1rem;
   position: fixed;
   bottom: 0;
   background-color: #333;
-  // @media #{$small-only}{
-  //   max-width: 500px;
-  // }
-  // @media #{$medium-only}{
-  //   max-width: 700px;
-  // } 
-  // @media #{$large-only}{
-  //   max-width: 1000px;
-  // }
 }
 
 .shadow {
