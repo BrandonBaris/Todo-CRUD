@@ -53,22 +53,18 @@ p {
   letter-spacing: 0.2px; }
 
 h1 {
-  font-size: 2rem; }
+  font-size: 1.6rem; }
 
 h2 {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  text-transform: uppercase; }
 
 h3 {
-  font-size: 0.7rem; }
-
-.date_created {
-  font-size: 0.4rem; }
-  .date_created:hover {
-    color: #D2350C;
-    font-size: 0.8rem; }
+  font-size: 0.5rem; }
 
 ul li {
-  padding: 1rem 2rem 3rem;
+  min-height: 100px;
+  padding: 1rem 2rem 2rem;
   background-color: #EDB258;
   float: left;
   margin: 0.5rem;
@@ -78,7 +74,7 @@ ul li {
     width: 200px;
     box-sizing: border-box; }
   ul li div.lower {
-    padding: 0.5rem; }
+    padding: 0.5rem 0; }
 
 fieldset {
   margin: auto;
@@ -90,10 +86,9 @@ fieldset {
 
 header {
   position: fixed;
-  width: 200px;
+  width: 100%;
   height: 2rem;
   padding: 1rem;
-  border-bottom-right-radius: 1rem;
   background-color: #7C7056;
   float: left; }
 
@@ -101,16 +96,37 @@ div.headspace {
   height: 100px; }
 
 .content {
-  margin: auto; }
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 5% 5%; }
   @media only screen and (max-width:640px) {
     .content {
       max-width: 400px; } }
 
 #check_stat {
-  float: left; }
+  float: left;
+  opacity: 0.5; }
 
-#delete {
+#delete_form {
   float: right; }
+
+#new_item {
+  display: inline-block; }
+
+#delete_button {
+  vertical-align: middle;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  background-color: #D2350C;
+  opacity: 0.7;
+  font-style: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  color: #7F3B00;
+  letter-spacing: 0.2px;
+  border: thin solid #7C7056;
+  border-radius: 20rem; }
 
 footer {
   text-align: center;

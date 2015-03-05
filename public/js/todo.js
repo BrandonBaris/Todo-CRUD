@@ -1,5 +1,15 @@
 $(function(){
 
+$("h2").mouseenter(function(){
+  $(this).next("p").slideDown(200);
+});
+$("li#todo_item").mouseleave(function(){
+  return setTimeout(function(){
+    $("p").slideUp(200);
+  }, 2000);
+
+});
+
 function countChecks() {
   var checked = 0;
   var totalItem = 0;
@@ -30,16 +40,10 @@ $("input#check_stat").on("change", function (){
     });
   }
 });
-$('#todo_item').hover(function(){
-  $(this).slideToggle(200);
-});
-$('#todo_item').mouseleave(function(){
-  $(this).slideToggle(200);
-});
 
 $( window ).load(function() {
-  countChecks(function() {
-  });
+  countChecks();
+  $("p").slideToggle(2000);
 });
 
 }); //end closurex
